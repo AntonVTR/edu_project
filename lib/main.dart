@@ -1,11 +1,11 @@
 import 'package:edo_app/services/dialog_service.dart';
 import 'package:edo_app/services/navigation_service.dart';
+import 'package:edo_app/ui/router.dart';
 import 'package:edo_app/ui/views/role_select.dart';
 import 'package:flutter/material.dart';
 
 import 'locator.dart';
 import 'managers/dialog_manager.dart';
-import 'ui/views/home/startup_view.dart';
 
 void main() {
   setupLocator();
@@ -13,7 +13,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,7 +30,7 @@ class MyApp extends StatelessWidget {
       ),
       navigatorKey: locator<NavigationService>().navigationKey,
       home: RoleSelectView(),
-      //onGenerateRoute: generateRoute,
+      onGenerateRoute: generateRoute,
     );
   }
 }
