@@ -2,12 +2,15 @@ import 'package:edo_app/services/dialog_service.dart';
 import 'package:edo_app/services/navigation_service.dart';
 import 'package:edo_app/ui/router.dart';
 import 'package:edo_app/ui/views/role_select.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'locator.dart';
 import 'managers/dialog_manager.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   setupLocator();
   runApp(MyApp());
 }
